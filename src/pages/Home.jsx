@@ -23,9 +23,15 @@ const Home = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.8 }}
       >
-        <a href="#"><FaInstagram /></a>
-        <a href="#"><FaYoutube /></a>
-        <a href="#"><FaTwitter /></a>
+        <button onClick={() => console.log('Instagram clicked')} aria-label="Instagram">
+          <FaInstagram />
+        </button>
+        <button onClick={() => console.log('YouTube clicked')} aria-label="YouTube">
+          <FaYoutube />
+        </button>
+        <button onClick={() => console.log('Twitter clicked')} aria-label="Twitter">
+          <FaTwitter />
+        </button>
       </motion.div>
 
       <div className="newsletter-cta">
