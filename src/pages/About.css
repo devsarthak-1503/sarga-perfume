@@ -1,0 +1,118 @@
+.about-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(to right, #0f0f0f, #1b1b1b);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+.about-header {
+  max-width: 900px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.about-header h2 {
+  font-size: 3rem;
+  color: #e5c07b;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+}
+
+.about-header p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #ccc;
+}
+
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 3rem 0;
+  gap: 2rem;
+}
+
+.timeline-item {
+  background: #1a1a1a;
+  border-left: 4px solid #e5c07b;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  flex: 1;
+  min-width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: translateY(-5px);
+}
+
+.timeline-item .year {
+  font-size: 1.5rem;
+  color: #e5c07b;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-item .desc {
+  font-size: 1rem;
+  color: #bbb;
+}
+
+.testimonials {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.testimonials h3 {
+  font-size: 2.2rem;
+  color: #e5c07b;
+  margin-bottom: 2rem;
+}
+
+.testimonial-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #151515;
+  border-radius: 15px;
+  padding: 2rem;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(229, 192, 123, 0.2);
+  transition: 0.3s ease;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #eee;
+  margin-bottom: 1rem;
+}
+
+.card span {
+  color: #999;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .about-header h2 {
+    font-size: 2rem;
+  }
+
+  .timeline {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .testimonial-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+}

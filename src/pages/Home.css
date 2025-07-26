@@ -1,0 +1,140 @@
+/* Home.css */
+
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+  color: #fff;
+  padding: 4rem 2rem;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.intro-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.intro-section h2 {
+  font-size: 3.5rem;
+  color: #f8f8f8;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.intro-section .brand {
+  background: linear-gradient(90deg, #f6d365, #fda085);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+}
+
+.subtext {
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.social-links a {
+  font-size: 2rem;
+  color: #888;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #fff;
+  transform: scale(1.2);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+.newsletter-cta {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 100%;
+}
+
+.newsletter-cta h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+  color: #fdfdfd;
+}
+
+.newsletter-cta p {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+
+.newsletter-cta input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  background-color: #1e1e1e;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+.newsletter-cta input::placeholder {
+  color: #aaa;
+}
+
+.newsletter-cta button {
+  padding: 0.9rem 2rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ff9966, #ff5e62);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.newsletter-cta button:hover {
+  background: linear-gradient(90deg, #ff5e62, #ff9966);
+  box-shadow: 0 0 15px #ff7e5f;
+}
+
+@media (max-width: 768px) {
+  .intro-section h2 {
+    font-size: 2.5rem;
+  }
+
+  .social-links a {
+    font-size: 1.5rem;
+  }
+
+  .newsletter-cta {
+    padding: 1.5rem 2rem;
+  }
+
+  .newsletter-cta h3 {
+    font-size: 1.5rem;
+  }
+}
