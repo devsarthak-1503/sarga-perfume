@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 const LoginSignup = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [useEmail, setUseEmail] = useState(true);
-
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -49,22 +48,68 @@ const LoginSignup = () => {
     e.preventDefault();
     const { username, email, mobile, password, confirmPassword } = formData;
 
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+
     if (isLogin) {
-      if ((!email && !mobile) || !password) {
+      const identifier = useEmail ? email : mobile;
+
+      const existingUser = users.find((user) =>
+        useEmail ? user.email === email : user.mobile === mobile
+      );
+
+      if (!identifier || !password) {
         setMessage("Please fill in all fields.");
         return;
       }
-      setMessage("Login successful (dummy).");
+
+      if (!existingUser) {
+        setMessage("User does not exist.");
+        return;
+      }
+
+      if (existingUser.password !== password) {
+        setMessage("Incorrect password.");
+        return;
+      }
+
+      setMessage(`Welcome back, ${existingUser.username || 'User'}! ✅`);
     } else {
       if (!username || (!email && !mobile) || !password || !confirmPassword) {
         setMessage("Please fill in all fields.");
         return;
       }
+
       if (password !== confirmPassword) {
         setMessage("Passwords do not match.");
         return;
       }
-      setMessage("Account created successfully (dummy).");
+
+      const duplicateUser = users.find((user) =>
+        useEmail ? user.email === email : user.mobile === mobile
+      );
+
+      if (duplicateUser) {
+        setMessage("User already exists with this email/mobile.");
+        return;
+      }
+
+      const newUser = {
+        username,
+        email: useEmail ? email : '',
+        mobile: useEmail ? '' : mobile,
+        password
+      };
+
+      users.push(newUser);
+      localStorage.setItem('users', JSON.stringify(users));
+      setMessage("Account created successfully ✅");
+      setFormData({
+        username: '',
+        email: '',
+        mobile: '',
+        password: '',
+        confirmPassword: ''
+      });
     }
   };
 
