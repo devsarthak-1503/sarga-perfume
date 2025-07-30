@@ -167,6 +167,23 @@
   box-shadow: 0 8px 16px rgba(212, 175, 55, 0.3);
 }
 
+.navbar {
+  transition: transform 0.4s ease;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar.hide {
+  transform: translateY(-100%);
+}
+
+.navbar.show {
+  transform: translateY(0);
+}
+
+
 @media screen and (max-width: 600px) {
   .products-section h2 {
     font-size: 2rem;
