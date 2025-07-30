@@ -18,18 +18,18 @@ const Navbar = () => {
     document.body.style.overflow = 'auto';
   };
 
-  const handleScroll = () => {
-    if (window.scrollY > lastScrollY && window.scrollY > 100) {
-      setShowNavbar(false);
-    } else {
-      setShowNavbar(true);
-    }
-    setLastScrollY(window.scrollY);
-  };
-
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => {
+      if (window.scrollY > lastScrollY && window.scrollY > 100) {
+        setShowNavbar(false);
+      } else {
+        setShowNavbar(true);
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, [lastScrollY]);
 
   return (
